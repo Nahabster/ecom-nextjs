@@ -1,11 +1,23 @@
 import Head from "next/head";
 import styles from "../../styles/Product.module.css";
-import products from '../../assets/products.json';
 import SingleProduct from "../../components/SingleProduct";
 
 
 
-export default function Product() {
+export async function getServerSideProps() {
+  const response = await fetch('http:localhost:3000/api/products');
+  const products = await response.json()
+  return {
+    props: { products}
+  }
+}
+
+
+
+
+
+export default function Product({products}) {
+  
   return (
     <div className={styles.container} >
       <Head>
