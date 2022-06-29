@@ -2,10 +2,11 @@ import Head from "next/head";
 import styles from "../../styles/Product.module.css";
 import SingleProduct from "../../components/SingleProduct";
 
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://bucolic-hamster-f84ecf.netlify.app/api' : 'http://localhost:3000/api' 
 
 
 export async function getServerSideProps() {
-  const response = await fetch('http:localhost:3000/api/products');
+  const response = await fetch(`${baseUrl}/products`);
   const products = await response.json()
   return {
     props: { products}
