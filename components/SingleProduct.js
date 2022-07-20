@@ -8,11 +8,16 @@ export default function SingleProduct ({
   images,
   description,
   price
-  }) { 
+  }) 
+  
+  { 
+    const hostname = process.env.NODE_ENV === 'production'
+    ? 'https://bucolic-hamster-f84ecf.netlify.app'
+    : 'https://5ced-47-144-182-75.ngrok.io'
 
-
-  return (
-  <div key={item_id} className={styles.product}>
+    return (
+      
+      <div key={item_id} className={styles.product}>
     <Image 
     src='https://placekitten.com/640/640'
     alt= {`Image of ${title}`}
