@@ -13,7 +13,7 @@ export default function SingleProduct ({
   { 
     const hostname = process.env.NODE_ENV === 'production'
     ? 'https://bucolic-hamster-f84ecf.netlify.app'
-    : 'https://5ced-47-144-182-75.ngrok.io'
+    : ' https://bf24-47-144-182-75.ngrok.io'
 
     return (
       
